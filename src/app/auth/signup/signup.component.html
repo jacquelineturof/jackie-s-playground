@@ -1,0 +1,34 @@
+<div class = "container">
+  <app-nav></app-nav>
+  <div class = "header">
+    <h1>WELCOME</h1>
+    <p>Register With Us To Begin Having More Control Over Your Bitmex Experience</p>
+  </div>
+  <div class = "form">
+    <form [formGroup] = "signupForm" (ngSubmit) = "onSubmit()">
+      <div class = "form-group">
+        <label for = "email">Email</label>
+        <input type = "email"
+               id = "email"
+               class = "form-control"
+               formControlName = "email">
+        <label for = "password">Password</label>
+        <input type = "password"
+                id = "password"
+                class = "form-control"
+                formControlName = "password">
+        <label for = "confirmPassword">Confirm Password</label>
+        <input type = "password"
+                id = "confirmPassword"
+                class = "form-control"
+                formControlName = "confirmPassword">
+        <label for = "accessCode">Access Code</label>
+        <input type = "text"
+               id = "accessCode"
+               class = "form-control"
+               formControlName = "accessCode">
+        <button type = "submit" class = "button">REGISTER</button>
+      </div>
+    </form>
+  </div>
+</div>

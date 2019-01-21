@@ -1,0 +1,28 @@
+<div class = "container">
+  <app-nav></app-nav>
+  <div class = "header">
+    <h1>WELCOME</h1>
+    <p>Login or Sign Up To Begin Organizing Your Bitmex Accounts!</p>
+    <div class = "links">
+      <a (click) = "goTo('signup')">Sign Up</a><a (click) = "goTo('about')">About Us</a>
+    </div>
+
+  </div>
+  <div class = "form">
+    <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+      <div class = "form-group">
+        <label for = "email">Email</label>
+        <input type = "email"
+               id = "email"
+               class = "form-control"
+               formControlName = "email">
+        <label for = "password">Password</label>
+        <input type = "password"
+                id = "password"
+                class = "form-control"
+                formControlName = "password">
+        <button type = "submit" class = "button">LOG IN</button>
+      </div>
+    </form>
+  </div>
+</div>

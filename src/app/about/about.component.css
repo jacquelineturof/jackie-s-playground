@@ -1,0 +1,73 @@
+.intro-header {
+  width: 100%;
+  height: 25%;
+  background-color:#0e4caf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+}
+
+.intro-footer {
+  width: 100%;
+  height: 25%;
+  background-color: black;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-info {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  width: 100%;
+  height: 100%;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  margin: 10px;
+}
+
+i {
+  transform: scale(4);
+
+}
+
+.animation {
+  animation-name: pointdown;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pointdown {
+  0% {
+    transform: translateY(-75px);
+  }
+  100% {
+    transform: translateY(75px);
+  }
+}
+
+.features {
+  height: 100%;
+  width: 100%;
+}
+
+mat-grid-tile {
+  border: none;
+}
+
