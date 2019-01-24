@@ -16,17 +16,17 @@ export class AuthService {
       .then(() => {
         this.router.navigate(['signupConfirm']);
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   }
 
   async signinUser(email: string, password: string) {
     try {
       const dbResponse = await firebase.auth().signInWithEmailAndPassword(email, password);
-      console.log(dbResponse);
       this.token = await firebase.auth().currentUser.getIdToken();
       this.authorizedSubject.next(true);
+      return 'Welcome ' + email + '!' ;
     } catch (e) {
-      console.log(e);
+      return e.message;
     }
   }
 

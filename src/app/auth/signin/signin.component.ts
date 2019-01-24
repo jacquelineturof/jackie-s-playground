@@ -22,11 +22,15 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.authService.signinUser(this.loginForm.value.email, this.loginForm.value.password);
-    this.snackbar.open('Hello, World!', 'Undo', {
-      duration: 2000
+  async onSubmit() {
+    const responseMessage = await this.authService.signinUser(this.loginForm.value.email, this.loginForm.value.password);
+    this.snackbar.open(responseMessage, 'Undo', {
+      duration: 8000
     });
+    // if login in successful navigate to account page
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/account']);
+    }
   }
 
   goTo(pageName: string) {

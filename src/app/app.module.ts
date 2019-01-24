@@ -18,6 +18,8 @@ import { SignUpConfirmComponent } from './auth/signup/signupConfirm/signupConfir
 import { AboutComponent } from './about/about.component';
 import { AuthService } from './auth/auth.service';
 import { NavComponent } from './nav/nav.component';
+import { AccountComponent } from './account/account.component';
+import { ApiKeysComponent } from './account/apiKeys/apiKeys.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { NavComponent } from './nav/nav.component';
     SignUpComponent,
     SignUpConfirmComponent,
     AboutComponent,
-    NavComponent
+    NavComponent,
+    AccountComponent,
+    ApiKeysComponent
   ],
   imports: [
     BrowserModule,

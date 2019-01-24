@@ -1,0 +1,12 @@
+<div class = "container">
+  <app-nav></app-nav>
+  <mat-toolbar>
+    <span><a [routerLink] = "[{outlets: { primary: ['/account'], account: ['keys']}}]"><i class="fa fa-key" aria-hidden="true"></i>Api Key(s)</a></span>
+    <span><a routerLink = "/orders"><i class="fa fa-plus" aria-hidden="true"></i>Orders</a></span>
+    <span><a routerLink = "/charts"><i class="fa fa-briefcase" aria-hidden="true"></i>Charts</a></span>
+  </mat-toolbar>
+  <div class = "header">
+    <h1>Welcome!</h1>
+  </div>
+  <router-outlet name = "account"></router-outlet>
+</div>
