@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './auth/signin/signin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './auth/signup/signup.component';
-import { SignUpConfirmComponent } from './auth/signup/signupConfirm/signupConfirmation.component';
 import { AboutComponent } from './about/about.component';
 import { AuthService } from './auth/auth.service';
 import { NavComponent } from './nav/nav.component';
@@ -31,7 +30,6 @@ import { AccoutHomeComponent } from './account/accountHome/accountHome.component
     HomeComponent,
     SignInComponent,
     SignUpComponent,
-    SignUpConfirmComponent,
     AboutComponent,
     NavComponent,
     AccountComponent,

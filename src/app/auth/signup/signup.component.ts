@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { MatSnackBar } from '@angular/material';
+
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -11,7 +14,8 @@ import { AuthService } from '../auth.service';
 export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService,
+              private snackbar: MatSnackBar) {}
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -22,16 +26,19 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     const signUp = this.signupForm.value;
+    let responseMessage = '';
     // Do something with form data
     // Check to make sure passwords are the same
     if (signUp.password === signUp.confirmPassword) {
-      this.authService.signupUser(signUp.email, signUp.password);
+      responseMessage = await this.authService.signupUser(signUp.email, signUp.password);
     } else {
-      console.log('Error: Passwords do not match!');
+      responseMessage = 'Passwords do not match';
     }
-    // Navigate to Main Account Page
-    this.router.navigate(['signupConfirm']);
+
+    this.snackbar.open(responseMessage, 'Undo', {
+      duration: 8000
+    });
   }
 }
