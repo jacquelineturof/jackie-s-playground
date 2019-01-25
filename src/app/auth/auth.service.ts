@@ -42,6 +42,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return this.token !== null;
+    console.log('in auth service: ', this.token);
+    return typeof this.token === 'string';
   }
 }

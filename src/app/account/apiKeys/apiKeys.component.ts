@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './apiKeys.component.html',
   styleUrls: ['./apiKeys.component.css']
 })
-export class ApiKeysComponent {}
+export class ApiKeysComponent {
+  keys = 0;
+}

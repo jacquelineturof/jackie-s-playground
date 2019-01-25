@@ -7,15 +7,22 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AccountComponent } from './account/account.component';
 import { ApiKeysComponent } from './account/apiKeys/apiKeys.component';
+import { OrdersComponent } from './account/orders/orders.component';
+import { ChartsComponent } from './account/charts/charts.component';
+import { AccoutHomeComponent } from './account/accountHome/accountHome.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
-  { path: 'login', component: SignInComponent },
+  { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'signupConfirm', component: SignUpConfirmComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'account', component: AccountComponent },
-  { path: 'keys', component: ApiKeysComponent, outlet: 'account' }
+  { path: 'account', component: AccountComponent, children: [
+    { path: '', component: AccoutHomeComponent, outlet: 'accountOutlet', pathMatch: 'full' },
+    { path: 'keys', component: ApiKeysComponent, outlet: 'accountOutlet' },
+    { path: 'orders', component: OrdersComponent, outlet: 'accountOutlet' },
+    { path: 'charts', component: ChartsComponent, outlet: 'accountOutlet' }
+  ] }
 ];
 
 @NgModule({

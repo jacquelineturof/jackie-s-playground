@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,9 @@ import { AuthService } from './auth/auth.service';
 import { NavComponent } from './nav/nav.component';
 import { AccountComponent } from './account/account.component';
 import { ApiKeysComponent } from './account/apiKeys/apiKeys.component';
+import { OrdersComponent } from './account/orders/orders.component';
+import { ChartsComponent } from './account/charts/charts.component';
+import { AccoutHomeComponent } from './account/accountHome/accountHome.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { ApiKeysComponent } from './account/apiKeys/apiKeys.component';
     AboutComponent,
     NavComponent,
     AccountComponent,
-    ApiKeysComponent
+    AccoutHomeComponent,
+    ApiKeysComponent,
+    OrdersComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { ApiKeysComponent } from './account/apiKeys/apiKeys.component';
     MatGridListModule,
     MatToolbarModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
