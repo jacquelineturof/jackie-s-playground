@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'about', component: AboutComponent },
   { path: 'account', component: AccountComponent, children: [
-    { path: '', component: AccoutHomeComponent, outlet: 'accountOutlet', pathMatch: 'full' },
+    { path: '', component: AccoutHomeComponent, pathMatch: 'full'},
     { path: 'keys', component: ApiKeysComponent, outlet: 'accountOutlet' },
     { path: 'orders', component: OrdersComponent, outlet: 'accountOutlet' },
     { path: 'charts', component: ChartsComponent, outlet: 'accountOutlet' }
