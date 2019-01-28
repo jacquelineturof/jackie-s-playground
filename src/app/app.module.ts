@@ -11,14 +11,14 @@ import { AboutComponent } from './about/about.component';
 import { AuthService } from './auth/auth.service';
 
 import { AccountComponent } from './account/account.component';
-import { ApiKeysComponent } from './account/apiKeys/apiKeys.component';
-import { OrdersComponent } from './account/orders/orders.component';
-import { ChartsComponent } from './account/charts/charts.component';
 import { AuthModule } from './auth/auth.module';
 import { AccoutHomeComponent } from './account/accountHome/accountHome.component';
 
 import { CoreModule } from './core/core.module';
 import { NgMaterialsModule } from './core/ngMaterials/ng-materials.module';
+import { ApiKeysModule } from './account/apiKeys/apiKeys.module';
+import { ChartsModule } from './account/charts/charts.module';
+import { OrdersModule } from './account/orders/orders.module';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,6 @@ import { NgMaterialsModule } from './core/ngMaterials/ng-materials.module';
     HomeComponent,
     AboutComponent,
     AccountComponent,
-    ApiKeysComponent,
-    OrdersComponent,
-    ChartsComponent,
     AccoutHomeComponent
   ],
   imports: [
@@ -39,7 +36,10 @@ import { NgMaterialsModule } from './core/ngMaterials/ng-materials.module';
     BrowserAnimationsModule,
     AuthModule,
     CoreModule,
-    NgMaterialsModule
+    NgMaterialsModule,
+    ApiKeysModule,
+    ChartsModule,
+    OrdersModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
