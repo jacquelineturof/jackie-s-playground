@@ -80,4 +80,26 @@ export class AuthService {
       });
     return message;
   }
+
+  async sendForgotPasswordEmail(email: string) {
+    try {
+      await firebase.auth().sendPasswordResetEmail(email);
+      return 'Email sent to: ' + email;
+    } catch (e) {
+      return e.message;
+    }
+
+    // let message = '';
+
+    // firebase.auth().sendPasswordResetEmail(email)
+    //   .then(() => {
+    //     message = 'Email sent to: ' + email;
+    //     console.log('Message value in then()', message);
+    //   })
+    //   .catch((error) => {
+    //     message = error.message;
+    //   });
+    //   console.log('Message value before return', message);
+    // return message;
+  }
 }

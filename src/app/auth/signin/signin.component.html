@@ -15,13 +15,19 @@
         <input type = "email"
                id = "email"
                class = "form-control"
-               formControlName = "email">
+               formControlName = "email"
+               [(ngModel)] = "userEmail">
         <label for = "password">Password</label>
         <input type = "password"
                 id = "password"
                 class = "form-control"
                 formControlName = "password">
-        <button type = "submit" class = "button">LOG IN</button>
+        <div class = "button-control">
+          <button type = "submit" class = "button">LOG IN</button>
+          <button type = "button" class = "button"
+                  (click) = "forgotPassword()">FORGOT PASSWORD</button>
+        </div>
+
       </div>
     </form>
   </div>

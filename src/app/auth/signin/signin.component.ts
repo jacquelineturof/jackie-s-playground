@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class SignInComponent implements OnInit {
   loginForm: FormGroup;
+  userEmail: string;
 
   constructor(private router: Router, private authService: AuthService,
               private snackbar: MatSnackBar ) {}
@@ -31,6 +32,13 @@ export class SignInComponent implements OnInit {
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/account']);
     }
+  }
+
+  async forgotPassword() {
+    const responseMessage = await this.authService.sendForgotPasswordEmail(this.userEmail);
+    this.snackbar.open(responseMessage, 'Undo', {
+      duration: 8000
+    });
   }
 
   goTo(pageName: string) {

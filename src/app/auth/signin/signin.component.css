@@ -47,7 +47,7 @@ a:hover {
 }
 
 .form-group {
-  translate: transformX(-20px);
+  width: 50%;
 }
 
 
@@ -59,12 +59,19 @@ a:hover {
 }
 
 .button {
-  width: 200px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
   font-size: 18px;
   font-family: 'Cinzel', serif;
   color: #0e4caf;
+}
+
+.button-control {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 50px;
 }
 
 .button:hover {
