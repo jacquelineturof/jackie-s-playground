@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material';
@@ -11,15 +11,15 @@ import { MatSnackBar } from '@angular/material';
 })
 export class SignInComponent implements OnInit {
   loginForm: FormGroup;
-  userEmail: string;
 
   constructor(private router: Router, private authService: AuthService,
               private snackbar: MatSnackBar ) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      'email': new FormControl(null),
-      'password': new FormControl(null)
+      'email': new FormControl(null, [Validators.required,
+          Validators.email]),
+      'password': new FormControl(null, Validators.required)
     });
   }
 
@@ -35,7 +35,13 @@ export class SignInComponent implements OnInit {
   }
 
   async forgotPassword() {
-    const responseMessage = await this.authService.sendForgotPasswordEmail(this.userEmail);
+    const email = this.loginForm.value.email;
+    let responseMessage = '';
+    if (email === null) {
+      responseMessage = 'Please enter an email to retrieve password!';
+    } else {
+      responseMessage = await this.authService.sendForgotPasswordEmail(email);
+    }
     this.snackbar.open(responseMessage, 'Undo', {
       duration: 8000
     });

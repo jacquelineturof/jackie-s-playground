@@ -11,24 +11,6 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  // signupUser(email: string, password: string): string {
-  //   let message = '';
-  //   firebase.auth().createUserWithEmailAndPassword(email, password)
-  //     .then(() => {
-  //       this.router.navigate(['signin']);
-  //       message = this.sendVerificationEmail();
-  //     })
-  //     .catch((error) => {
-  //       console.log('in error signup', error);
-  //       message = error.message;
-  //       console.log('in error signup', message);
-  //       return message;
-
-  //     });
-  //   console.log('i bet this message is empty', message);
-  //   return message;
-  // }
-
   async signupUser(email: string, password: string) {
     try {
       const res = await firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -88,18 +70,5 @@ export class AuthService {
     } catch (e) {
       return e.message;
     }
-
-    // let message = '';
-
-    // firebase.auth().sendPasswordResetEmail(email)
-    //   .then(() => {
-    //     message = 'Email sent to: ' + email;
-    //     console.log('Message value in then()', message);
-    //   })
-    //   .catch((error) => {
-    //     message = error.message;
-    //   });
-    //   console.log('Message value before return', message);
-    // return message;
   }
 }

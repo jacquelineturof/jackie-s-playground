@@ -12,21 +12,41 @@
                id = "email"
                class = "form-control"
                formControlName = "email">
+        <span class = "help-block"
+               *ngIf = "signupForm.get('email').errors['required'] && signupForm.get('email').touched">
+                 <p>Please enter an email address!</p>
+         </span>
+         <span class = "help-block"
+               *ngIf = "signupForm.get('email').errors['email'] && signupForm.get('email').touched">
+                 <p>Please enter an email address!</p>
+         </span>
         <label for = "password">Password</label>
         <input type = "password"
                 id = "password"
                 class = "form-control"
                 formControlName = "password">
+        <span class = "help-block"
+              *ngIf = "signupForm.get('password').errors['required'] && signupForm.get('password').touched">
+                <p>Please enter a password!</p>
+        </span>
         <label for = "confirmPassword">Confirm Password</label>
         <input type = "password"
                 id = "confirmPassword"
                 class = "form-control"
                 formControlName = "confirmPassword">
+        <span class = "help-block"
+              *ngIf = "signupForm.get('confirmPassword').errors['required'] && signupForm.get('confirmPassword').touched">
+                <p>Please confirm password!</p>
+        </span>
         <label for = "accessCode">Access Code</label>
         <input type = "text"
                id = "accessCode"
                class = "form-control"
                formControlName = "accessCode">
+        <span class = "help-block"
+               *ngIf = "signupForm.get('accessCode').errors['required'] && signupForm.get('accessCode').touched">
+                 <p>Please enter an access code!</p>
+         </span>
         <button type = "submit" class = "button">REGISTER</button>
       </div>
     </form>

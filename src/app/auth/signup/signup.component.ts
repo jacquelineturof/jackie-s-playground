@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { MatSnackBar } from '@angular/material';
@@ -19,10 +19,10 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = new FormGroup({
-      'email': new FormControl(null),
-      'password': new FormControl(null),
-      'confirmPassword': new FormControl(null),
-      'accessCode': new FormControl(null)
+      'email': new FormControl(null, [Validators.email, Validators.required]),
+      'password': new FormControl(null, [Validators.required]),
+      'confirmPassword': new FormControl(null, [Validators.required]),
+      'accessCode': new FormControl(null, [Validators.required])
     });
   }
 

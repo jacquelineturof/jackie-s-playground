@@ -6,6 +6,8 @@ import { SignUpComponent } from './signup/signup.component';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { CoreModule } from '../core/core.module';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { CoreModule } from '../core/core.module';
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
+    BrowserModule,
     AuthRoutingModule,
     CoreModule
   ]

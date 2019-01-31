@@ -12,7 +12,6 @@ import { AuthService } from './auth/auth.service';
 
 import { AccountComponent } from './account/account.component';
 import { AuthModule } from './auth/auth.module';
-import { AccoutHomeComponent } from './account/accountHome/accountHome.component';
 
 import { CoreModule } from './core/core.module';
 import { NgMaterialsModule } from './core/ngMaterials/ng-materials.module';
@@ -25,8 +24,7 @@ import { OrdersModule } from './account/orders/orders.module';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    AccountComponent,
-    AccoutHomeComponent
+    AccountComponent
   ],
   imports: [
     BrowserModule,
