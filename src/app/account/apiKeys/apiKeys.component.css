@@ -1,0 +1,21 @@
+.keys {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  height: 50%;
+}
+
+.add_key {
+  color: black;
+}
+
+.add_key_form {
+  display: flex;
+  flex-direction: column;
+  width: 100;
+  height: 50%;
+  align-items: center;
+  margin-top: 50px;
+}

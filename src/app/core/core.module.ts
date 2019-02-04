@@ -6,6 +6,7 @@ import { NgMaterialsModule } from './ngMaterials/ng-materials.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
   declarations: [
     NavComponent
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     NavComponent
-  ]
+  ],
+  providers: [],
 })
 export class CoreModule {}
